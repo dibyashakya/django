@@ -65,14 +65,14 @@ def monthly_challenge(request, month):
         # return HttpResponse(challenge_text)
         # response_data = render_to_string(" testapp/testapp.html")
         # return HttpResponse(response_data)
-        return render(request, "testapp/challenge.html",{
+        return render(request, 'testapp/challenge.html',{
             "text" : challenge_text,
-            " month-name":month
+            "month_name" : month
         })
     except KeyError:
-        raise Http404()
-        # return HttpResponseNotFound("<h1>This month is not supported!</h1>")
-    # return HttpResponse(monthly_challenges.get(month, "Invalid month"))
+        # raise Http404()
+        return HttpResponseNotFound("<h1>This month is not supported!</h1>")
+        # return HttpResponse(monthly_challenges.get(month, "Invalid month"))
 
 def old_url(request):
     return HttpResponseRedirect('/testapp/january')
