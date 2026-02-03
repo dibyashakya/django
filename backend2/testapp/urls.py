@@ -1,15 +1,7 @@
-# from django.urls import path
-# from . import views
-
-# urlpatterns =[
-#     path('', views.index, name="index"),
-#     path('<int:month>/', views.monthly_challenge_by_number, name="monthly_challenge_by_num"),
-#     path('<str:month>/', views.monthly_challenge, name="monthly_challenge"),
-# ]
-
 from django.urls import path
 from . import views
 
+app_name = "testapp"
 urlpatterns = [
     # path('', views.home, name='home'),
     path('', views.index, name='index'),

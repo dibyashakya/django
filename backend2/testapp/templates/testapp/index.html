@@ -1,11 +1,32 @@
-{% comment %} {% extends base.html %} {% block content %}
-
-<!-- challenges/templates/challenges/index.html -->
-<ul>
-  {% for month in months %}
-  <li>
-    <a href="% url 'monthly-challenge' month %"> {{ month|title }} </a>
-  </li>
-  {% endfor %}
-</ul>
-{% endblock content%} {% endcomment %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Challenges</title>
+  </head>
+  <body>
+    <ul>
+      {% comment %}
+      <li><a href="/challenges/january">January</a></li>
+      <li><a href="/challenges/february">February</a></li>
+      <li><a href="/challenges/march">March</a></li>
+      <li><a href="/challenges/april">April</a></li>
+      <li><a href="/challenges/may">May</a></li>
+      <li><a href="/challenges/june">June</a></li>
+      <li><a href="/challenges/july">July</a></li>
+      <li><a href="/challenges/august">August</a></li>
+      <li><a href="/challenges/september">September</a></li>
+      <li><a href="/challenges/october">October</a></li>
+      <li><a href="/challenges/november">November</a></li>
+      <li><a href="/challenges/december">December</a></li>
+      {% endcomment %} {% for month in months %}
+      <li>
+        <a href="/testapp/{{month}}">
+          {{ forloop.counter }} - {{ month|title }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
