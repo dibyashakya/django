@@ -1,0 +1,6 @@
+{
+  "editor.fontSize": 15,
+  "emmet.includeLanguages": {
+    "django-html": "html"
+  }
+}

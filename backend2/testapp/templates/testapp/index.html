@@ -1,0 +1,11 @@
+{% comment %} {% extends base.html %} {% block content %}
+
+<!-- challenges/templates/challenges/index.html -->
+<ul>
+  {% for month in months %}
+  <li>
+    <a href="% url 'monthly-challenge' month %"> {{ month|title }} </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock content%} {% endcomment %}
