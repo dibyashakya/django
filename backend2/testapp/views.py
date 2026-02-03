@@ -82,7 +82,20 @@ monthly_challenges = {
 }
 
 def index(request):
-    return HttpResponse("Welcome to the Challenges App!!")
+    # return HttpResponse("Welcome to the Challenges App!!")
+    html_content = """
+    <html>
+        <head><title>Challenges</title></head>
+        <body>
+            <h1>Monthly Challenges</h1>
+            <ul>
+                <li><a href="/testapp/january/">January</a></li>
+                <li><a href="/testapp/february/">February</a></li>
+            </ul>
+        </body>
+    </html>
+    """
+    return HttpResponse(html_content)
 
 def january(request):
     return HttpResponse("January Challenge: Exercise daily!!")
@@ -93,9 +106,11 @@ def february(request):
 def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month.lower()]
-        return HttpResponse(challenge_text)
+        # return HttpResponse(challenge_text)
+        response_data = f"<h1>{challenge_text}</h1>"
+        return HttpResponse(response_data)
     except KeyError:
-        return HttpResponseNotFound("This month is not supported!")
+        return HttpResponseNotFound("<h1>This month is not supported!</h1>")
 
 def old_url(request):
     return HttpResponseRedirect('/testapp/january')
