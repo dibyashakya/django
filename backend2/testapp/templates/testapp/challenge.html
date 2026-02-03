@@ -1,4 +1,11 @@
-<!doctype html>
+{% extends "base.html" %} {% block page_title %} {{ month_name|title }}
+Challenge {% endblock %} {% block content %}
+<h1>{{ month_name|title }} Challenge</h1>
+{% if text is not None %}
+<h2>{{ text }}</h2>
+{% else %}
+<p>There is no challenge for this month yet!</p>
+{% endif %} {% endblock %} {% comment %}<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,6 +13,9 @@
     <title>{{month_name | title}} Challenges</title>
   </head>
   <body>
+    <!-- This code snippet is a template written in a combination of HTML and a template language
+    (possibly Jinja or similar). Here's what it does: -->
+
     <h1>{{month_name | title}} Challenge</h1>
     {% if text is not None %}
     <h2>{{text}}</h2>
@@ -14,3 +24,4 @@
     {% endif %}
   </body>
 </html>
+{% endcomment %}
